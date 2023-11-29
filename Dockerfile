@@ -1,9 +1,5 @@
-FROM caddy:2-alpine
+FROM dunglas/mercure
 
 ENV MERCURE_TRANSPORT_URL=bolt:///data/mercure.db
-
-COPY mercure /usr/bin/caddy
-COPY Caddyfile /etc/caddy/Caddyfile
-COPY Caddyfile.dev /etc/caddy/Caddyfile.dev
 
 CMD "dunglas/mercure"
